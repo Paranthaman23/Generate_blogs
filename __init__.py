@@ -3,9 +3,6 @@ import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain.llms import CTransformers
 
-
-
-
 def getLLamaresponse(input_text,no_words,blog_style):
     
     llm=CTransformers(model= "llama-2-7b-chat.ggmlv3.q8_0.bin",
