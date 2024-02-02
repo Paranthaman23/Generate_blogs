@@ -2,15 +2,14 @@ import os
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain.llms import CTransformers
-from transformers import AutoModelForCausalLM, AutoTokenizer
+
 
 
 
 def getLLamaresponse(input_text,no_words,blog_style):
     
-    llm=CTransformers(model= AutoModelForCausalLM.from_pretrained("https://huggingface.co/llama-2-7b-chat.ggmlv3.q8_0.bin"),
+    llm=CTransformers(model= "llama-2-7b-chat.ggmlv3.q8_0.bin",
                       model_type ='llama',
-                      tokennizer = AutoTokenizer.from_pretrained("https://huggingface.co/llama-2-7b-chat.ggmlv3.q8_0.bin"),
                       config={'max_new_tokens':256,
                               'temperature':0.01})
     
